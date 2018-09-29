@@ -1,0 +1,42 @@
+
+
+{% extends 'base.html.twig' %}
+{%  block body %}   
+<div>
+<h2>{{ articles.titre }}</h2>
+  <img src="{{asset('Templates/img/')}}{{articles.image }}" class="large"  >
+
+<div>
+<p>{{ articles.description }}</p>
+
+<h3> Commentaire </h3>
+<div classe="form-group">
+{{ form_start(comment1) }}
+{{ form_row(comment1.author, {'label':'Auteur', 'attr':{'class':'form-control input'}} )}}
+{{ form_row(comment1.comment, {'label':'Commentaire', 'attr':{'class':'form-control input'}} )}}
+</br>
+<button type="submit" class="btn btn-success"> Laisser un commentaire </button>
+{{ form_end(comment1) }}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

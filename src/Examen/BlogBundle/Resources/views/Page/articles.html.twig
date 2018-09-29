@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    <header>
+        <h1> Creer votre article! </h1>
+    </header>
+
+
+    <div class="form-group">
+{{ form_start(form_article) }}
+{{ form_row(form_article.titre, {'label':'Titre', 'attr':{'class':'form-control input' }} )}}
+{{ form_row(form_article.auteur, {'label':'Auteur', 'attr':{'class':'form-control input' }} )}}
+{{ form_row(form_article.description, {'label':'Description', 'attr':{'class':'form-control input' }} )}}
+
+{{ form_row(form_article.image, {'label':'Image', 'attr':{'class':'form-control input' }} )}}
+{{ form_widget(form_article) }}
+<button type="submit"> Envoyer </button>
+{{ form_end(form_article) }}
+ </div>
+  </div>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,30 @@
+
+{%  extends 'base.html.twig' %}
+{%  block body %}   
+  <div class="container">
+    <header >
+        <h1> Inscription sur le blog </h1>
+    </header>
+
+    <div class="form-group" >
+
+      {{ form_start(form) }}
+
+        {{ form_row(form.nom, {'label':'Nom', 'attr':{'class':'form-control input' }} )}}
+        {{ form_row(form.prenom , {'label':'Prenom', 'attr':{'class':'form-control input'}} ) }}
+        {{ form_row(form.email , {'label':'Email', 'attr':{'class':'form-control input'}} ) }}
+        {{ form_row(form.password , {'label':'Password', 'attr':{'class':'form-control input'}} ) }}
+        {{ form_row(form.sexe , {'label':'Sexe', 'attr':{'class':'form-control input'}} ) }}
+        {{ form_row(form.adresse , {'label':'Addresse', 'attr':{'class':'form-control input'}} ) }}
+        {{ form_row(form.telephone , {'label':'Telephone', 'attr':{'class':'form-control input'}} ) }}
+        {{ form_row(form.date_naissance , {'label':'Date', 'attr':{'class':'form-control input'}} ) }}  
+        
+        <button type="submit" class="btn btn-success"> Envoyer </button>
+        {{ form_end(form) }}
+  
+        
+    </div>
+  </div>
+{% endblock %}
+
+

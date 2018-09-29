@@ -1,0 +1,8 @@
+examen_blog:
+    resource: "@ExamenBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

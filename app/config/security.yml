@@ -1,0 +1,34 @@
+
+security:
+    encoders:
+        ExamenBlogBundle\Entity\Users: Plaintext
+
+    providers:
+        in_memory: { memory: ~ }
+        db-provider:
+            entity:
+                class: ExamenBlogBundle\Entity\Users
+                property: email
+               
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+       
+        main:
+            anonymous: ~
+
+            provider: db-provider
+
+            form_login:
+                login_path: examen_blog_login
+                check_path: examen_blog_login
+                
+   
+
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # https://symfony.com/doc/current/security/form_login_setup.html
+            #form_login: ~

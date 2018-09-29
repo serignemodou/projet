@@ -1,0 +1,9 @@
+examen_blog:
+    resource: "@ExamenBlogBundle/Resources/config/routing.yml"
+    prefix:   /blog
+
+
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

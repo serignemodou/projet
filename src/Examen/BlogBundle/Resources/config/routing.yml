@@ -1,0 +1,40 @@
+examen_blog_accountpage:
+    path:     /create_account
+    defaults: { _controller: ExamenBlogBundle:Security:account }
+
+examen_blog_layaout:
+    path:     /layaout
+    defaults: { _controller: ExamenBlogBundle:Layaout:layaout }
+
+examen_blog_articlespage:
+    path:     /create_article
+    defaults: { _controller: ExamenBlogBundle:Article:articles }    
+
+examen_blog_articlepubliepage:
+    path:     /article_list
+    defaults: { _controller: ExamenBlogBundle:Article:articlesList } 
+
+examen_blog_mesarticlepage:
+    path:     /mes_article
+    defaults: { _controller: ExamenBlogBundle:Article:mesarticle }       
+    
+examen_blog_category:
+    path:     /category
+    defaults: { _controller: ExamenBlogBundle:Categori:category }   
+
+examen_blog_categorypublie:
+    path:     /category_list
+    defaults: { _controller: ExamenBlogBundle:Categori:categoryList }   
+
+examen_blog_comment:
+    path:     /comment
+    defaults: { _controller: ExamenBlogBundle:Comment:comment }    
+
+examen_blog_showarticle:
+    path:     /articles/{id}/showarticle
+    defaults: { _controller: ExamenBlogBundle:Article:showarticle }
+
+
+examen_blog_login:
+    path:     /login
+    defaults: { _controller: ExamenBlogBundle:Security:login }
