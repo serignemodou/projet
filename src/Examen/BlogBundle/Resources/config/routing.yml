@@ -38,3 +38,10 @@ examen_blog_showarticle:
 examen_blog_login:
     path:     /login
     defaults: { _controller: ExamenBlogBundle:Security:login }
+
+
+examen_blog_politique:
+    path:     /politique
+    defaults: { _controller: ExamenBlogBundle:Article:politique }   
+    
+     

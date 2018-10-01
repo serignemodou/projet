@@ -43,16 +43,11 @@ class Commentaire
      * 
      * 
      * @Assert\Type(type="Examen\BlogBundle\Entity\Articles")
-     * @ORM\ManyToOne(targetEntity="Articles",
+     * @ORM\ManyToOne(targetEntity="Articles", inversedBy="comment",
        cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $article;
-    
-    
-
-   
-
 
     /**
      * Get id
@@ -103,15 +98,7 @@ class Commentaire
         return $this;
     }
 
-    /**
-     * Get article
-     *
-     * @return \Examen\BlogBundle\Entity\Articles
-     */
-    public function getArticles()
-    {
-        return $this->article;
-    }
+ 
 
    
 

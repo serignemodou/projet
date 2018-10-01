@@ -1,31 +1,21 @@
-
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
 security:
-    encoders:
-        ExamenBlogBundle\Entity\Users: Plaintext
 
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
-        in_memory: { memory: ~ }
-        db-provider:
-            entity:
-                class: ExamenBlogBundle\Entity\Users
-                property: email
-               
+        in_memory:
+            memory: ~
+
     firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-       
         main:
             anonymous: ~
-
-            provider: db-provider
-
-            form_login:
-                login_path: examen_blog_login
-                check_path: examen_blog_login
-                
-   
+            # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
             #http_basic: ~

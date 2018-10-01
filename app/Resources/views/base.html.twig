@@ -5,10 +5,13 @@
     background-color:green;
     color:white;
   }
+  .display-4{
+    text-align:center;
+  }
 </style>
 
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg ">
-  <a class="navbar-brand" href="#">BLOG</a>
+  <a class="navbar-brand" href="#">TDSI2018</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -16,7 +19,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="{{path('examen_blog_layaout') }}">Acceuiel <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{path('examen_blog_layaout') }}">Acceuil <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link"href="{{path('examen_blog_articlespage')}}">Creer Article <span class="sr-only">(current)</span></a>
@@ -38,7 +41,7 @@
           Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Politique</a>
+          <a class="dropdown-item" href="{{ path('examen_blog_politique')}}">Politique</a>
           <a class="dropdown-item" href="#">Developpement</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Reseau</a>
@@ -50,16 +53,15 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a  href="{{path('examen_blog_login') }}"></a>connecter</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a  href="{{ path('examen_blog_login') }}"></a>connecter</button>
     </form>
   </div>
 </nav>
 
 <div class="jumbotron jumbotron-fluid ju">
   <div class="container">
-    <h1 class="display-4">Blog D'information</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <h1 class="display-4">Blog TDSI2018</h1>
+    <p class="lead">Apprenez a developper vos comptence dans le domaine des reseau programmation et surtout vous pouvez recevoire toute l'actualite international sur ce blog!!.</p>
   </div>
 </div>
 {% block body %}  {% endblock %} 

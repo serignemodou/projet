@@ -6,8 +6,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Examen\BlogBundle\Form\UsersType;
 use Examen\BlogBundle\Entity\Users;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
 
 
 
@@ -38,14 +36,16 @@ class SecurityController extends Controller
 
     $formview =$form->createView();
     
-        return $this->render('@ExamenBlog/Page/account.html.twig',array(
+        return $this->render('@ExamenBlog/Page/account.html.twig', array(
             'form'=>$formview
         ));
     }
 
 public function loginAction()
 {
-
+   
+    
+    return $this->redirectToRoute('examen_blog_layaout');
     return $this->render('@ExamenBlog/Page/login.html.twig');
 }
 

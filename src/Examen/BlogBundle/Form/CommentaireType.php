@@ -20,7 +20,8 @@ class CommentaireType extends AbstractType
         ->add('author', TextType::class)
         ;
         
-    }/**
+    }
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

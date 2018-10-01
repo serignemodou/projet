@@ -68,7 +68,7 @@ class Articles
     private $image;
 
     /**
-     * @ORM\OneToMany(targetEntity="Commentaire", mappedBy="articles")
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="articles")
      */
     private $comment;
 

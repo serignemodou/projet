@@ -3,20 +3,22 @@
 {% extends 'base.html.twig' %}
 {%  block body %}   
 <div>
-<h2>{{ articles.titre }}</h2>
-  <img src="{{asset('Templates/img/')}}{{articles.image }}" class="large"  >
+<h3>{{ articles.titre }}</h3>
+  <img src="{{asset('Templates/img/')}}{{articles.image }}"  >
 
 <div>
 <p>{{ articles.description }}</p>
 
-<h3> Commentaire </h3>
-<div classe="form-group">
-{{ form_start(comment1) }}
-{{ form_row(comment1.author, {'label':'Auteur', 'attr':{'class':'form-control input'}} )}}
-{{ form_row(comment1.comment, {'label':'Commentaire', 'attr':{'class':'form-control input'}} )}}
+<h3> Commenter cette article </h3>
+<div class="form-group">
+{{ form_start(comment) }}
+{{ form_row(comment.author, {'label':'Auteur', 'attr':{'class':'form-control input'}} )}}
+{{ form_row(comment.comment, {'label':'Commentaire', 'attr':{'class':'form-control input'}} )}}
 </br>
 <button type="submit" class="btn btn-success"> Laisser un commentaire </button>
-{{ form_end(comment1) }}
+{{ form_end(comment) }}
+</div>
+</div>
 </div>
 {% endblock %}
 

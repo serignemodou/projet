@@ -1,0 +1,80 @@
+
+ {% extends 'base.html.twig' %}
+        {% block body %}
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Liste article</title>
+
+  <style type="text/css">
+
+  .large{
+      margin-left: 50px;
+       width: 350px;
+       height: 200px;
+       margin:10px auto;
+      border:3px;
+  }
+
+  .com{
+      width:50px;
+    	height:70px;
+      background-color: gray;
+  }
+  </style>
+  <script src="{{ asset('Templetes/js/bootstrap.min.js')}}"></script>
+  </head>
+<body>
+         
+        {% for articles in article %}
+        {% if articles.category_id ==1 %}
+        <link href="{{ asset('formul/doc.css')}}" type="text/css"  rel="stylesheet">
+        <article>
+          <header>
+          
+            <h3>{{ articles.titre }}</h3>
+              </header>
+      <img src="{{asset('Templates/img/')}}{{articles.image }}" class="large"  >
+        <div>
+            <p>{{ articles.description | slice(0,500) }}...<a href="{{ path('examen_blog_showarticle', {'id':articles.id})}}"  class="btn btn-primary"> Voir plus</a></p>
+        </div>
+    </article>
+    
+  
+      </br>  
+       </br>    
+        </br> 
+
+        {% endif %} 
+        {% endfor %}
+        
+  
+</body>
+</html>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

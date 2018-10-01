@@ -12,7 +12,7 @@ use Examen\BlogBundle\Entity\Users;
 use Examen\BlogBundle\Entity\Articles;
 use Examen\BlogBundle\Entity\Category;
 use Examen\BlogBundle\Entity\Commentaire;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 
 
 

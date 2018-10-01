@@ -3,15 +3,10 @@
 namespace Examen\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use Examen\BlogBundle\Form\UsersType;
 use Examen\BlogBundle\Form\ArticlesType;
-use Examen\BlogBundle\Form\CategoryType;
 use Examen\BlogBundle\Form\CommentaireType;
-use Examen\BlogBundle\Entity\Users;
 use Examen\BlogBundle\Entity\Articles;
-use Examen\BlogBundle\Entity\Category;
 use Examen\BlogBundle\Entity\Commentaire;
 
 
@@ -78,18 +73,25 @@ class ArticleController extends Controller
     }
   
     
-    public function showarticleAction( Request $request, Articles $articles, $id )
+    public function showarticleAction( Request $request, Articles $articles )
 
     {
-        $comment= new Commentaire();
+        $comment = new Commentaire();
+
         $form =$this->createForm(CommentaireType::class, $comment);
+
         $form->handleRequest($request);
-        $em=$this->getDoctrine()->getManager();
-        $articles=$em ->getRepository('ExamenBlogBundle:Articles')  ->find($id); 
+
+
+  //      $articles=$this->getDoctrine()->getManager() ->getRepository('ExamenBlogBundle:Articles') ->find($id); 
+
         if($form->isSubmitted() && $form->isValid()){
+
             $comment->setArticles($articles);
+            $em=$this->getDoctrine()->getManager();
             $em->persist($comment);
             $em->flush();
+            
             return $this->redirectToRoute('examen_blog_showarticle', array(
                 'id'=>$articles->getId()
             ));
@@ -97,10 +99,23 @@ class ArticleController extends Controller
          return $this->render('@ExamenBlog/Page/showarticle.html.twig', array(
            
             'articles'=>$articles,
-           'comment1' =>$form->createView(),
+           'comment' =>$form->createView()
         
         ));
 
     }
+
+
+    
+   public function politiqueAction()
+   {
+    
+       $article=$this  ->getDoctrine()  ->getRepository('ExamenBlogBundle:Articles')  ->findAll(); 
+       return $this->render('@ExamenBlog/Page/politique.html.twig', array(
+           'article'=>$article,
+
+       ));
+
+   }
   
 }
